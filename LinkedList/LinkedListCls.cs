@@ -60,6 +60,40 @@ namespace LinkedList
                 }
             }
         }
+        public void Remove(int data)
+        {
+            Node newNode = new Node(data);
+            Node temp = head;
+            if (head.data == data)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        temp.next = temp.next.next;
+                        Console.WriteLine("{0} is removed from the list", data);
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+        }
+        public void RemoveFirst()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                Console.WriteLine("{0} is removed from the list", head.data);
+                head = head.next;
+            }
+        }
             public void Display()
         {
             Node temp = this.head;
