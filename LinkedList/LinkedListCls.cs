@@ -31,6 +31,13 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", newnode.data);
         }
+        public void AddFist(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.next = head;
+            head = newNode;
+            Console.WriteLine("{0} inserted into the LinkedList", newNode.data);
+        }
         public void Display()
         {
             Node temp = this.head;
