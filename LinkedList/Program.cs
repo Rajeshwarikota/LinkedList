@@ -53,12 +53,13 @@ namespace LinkedList
                         break;
                     case 6:
                         list.Append(56);
+                        list.Append(30);
                         list.Append(70);
-                        list.Append(90);
-                        list.Append(70);
-                        list.Remove(90);
+                        list.RemoveLast();
                         list.Display();
                         break;
+
+
                     case 22:
                         flag = false;
                         break;

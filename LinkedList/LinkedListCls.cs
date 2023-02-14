@@ -60,28 +60,7 @@ namespace LinkedList
                 }
             }
         }
-        public void Remove(int data)
-        {
-            Node newNode = new Node(data);
-            Node temp = head;
-            if (head.data == data)
-            {
-                Console.WriteLine("List is Empty");
-            }
-            else
-            {
-                while (temp.next != null)
-                {
-                    if (temp.next.data == data)
-                    {
-                        temp.next = temp.next.next;
-                        Console.WriteLine("{0} is removed from the list", data);
-                        break;
-                    }
-                    temp = temp.next;
-                }
-            }
-        }
+       
         public void RemoveFirst()
         {
             if (head == null)
@@ -94,7 +73,34 @@ namespace LinkedList
                 head = head.next;
             }
         }
-            public void Display()
+        public void RemoveLast()
+        {
+            Node temp = head;
+            if (temp == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else if (temp.next == null)
+            {
+                int data = temp.data;
+                temp = null;
+                head = temp;
+                Console.WriteLine("{0}  node is removed", data);
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                int lastDeleteNode = temp.next.data;
+                temp.next = null;
+                Console.WriteLine("{0} node is removed from the list", lastDeleteNode);
+             
+            }
+        }
+
+        public void Display()
         {
             Node temp = this.head;
             if (temp == null)
