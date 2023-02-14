@@ -99,6 +99,31 @@ namespace LinkedList
              
             }
         }
+        public void Search(int data)
+        {
+            Node temp = head;
+            bool isFound = false;
+            int count = 0;
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    count++;
+                    if (temp.data == data)
+                    {
+                        Console.WriteLine("\n{0} is found at position {1}", temp.data, count);
+                        isFound = true;
+                    }
+                    temp = temp.next;
+                }
+                if (!isFound)
+                    Console.WriteLine("\n{0} is not found ", data);
+            }
+        }
 
         public void Display()
         {
